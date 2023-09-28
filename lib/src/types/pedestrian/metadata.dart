@@ -1,21 +1,21 @@
 part of yandex_mapkit;
 
 /// Information about pedestrian route metadata.
-class PedestrianSectionMetadata extends Equatable {
-
+class PedestrianRouteMetadata extends Equatable {
   /// Route "weight".
   final PedestrianWeight weight;
 
-  const PedestrianSectionMetadata._(this.weight);
+  const PedestrianRouteMetadata._(this.weight);
 
-  factory PedestrianSectionMetadata._fromJson(Map<dynamic, dynamic> json) {
-    return PedestrianSectionMetadata._(PedestrianWeight._fromJson(json['weight']));
+  factory PedestrianRouteMetadata._fromJson(Map<dynamic, dynamic> json) {
+    return PedestrianRouteMetadata._(
+        PedestrianWeight._fromJson(json['weight']));
   }
 
   @override
   List<Object> get props => <Object>[
-    weight,
-  ];
+        weight,
+      ];
 
   @override
   bool get stringify => true;
@@ -23,7 +23,6 @@ class PedestrianSectionMetadata extends Equatable {
 
 /// Quantitative characteristics of any segment of the route.
 class PedestrianWeight extends Equatable {
-
   /// Time to travel, not considering traffic.
   final LocalizedValue time;
 
@@ -41,9 +40,9 @@ class PedestrianWeight extends Equatable {
 
   @override
   List<Object> get props => <Object>[
-    time,
-    distance,
-  ];
+        time,
+        distance,
+      ];
 
   @override
   bool get stringify => true;
